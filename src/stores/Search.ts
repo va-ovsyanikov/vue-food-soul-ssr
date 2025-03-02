@@ -2,6 +2,7 @@ import { defineStore } from 'pinia';
 import axios from 'axios';
 import type { Search } from '@/interfaces';
 import { ref } from 'vue';
+import {URL} from '@/constants';
 
 export const useSearchStore = defineStore('search', () =>  {
 
@@ -12,7 +13,7 @@ export const useSearchStore = defineStore('search', () =>  {
   const searchData = async (query:string) => {
     loader.value = true
       try {
-        const { data } = await axios.get<Search[]>(`https://nominatim.openstreetmap.org/search`, {
+        const { data } = await axios.get<Search[]>(URL, {
           params: { q: query, format: 'json' },
         });
         results.value = data;
