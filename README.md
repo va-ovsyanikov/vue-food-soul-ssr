@@ -1,3 +1,6 @@
+npm run build
+Запуск сервера: npx tsx server/server.ts
+
 # vue-food-soul-ssr
 
 This template should help get you started developing with Vue 3 in Vite.
